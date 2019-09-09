@@ -1,0 +1,23 @@
+{% extends 'homepage.html' %} {% block content %}
+
+   <div id="fh5co-blog">
+			<div class="row">
+				<div class="col-md-4">
+					{% for article in article %}
+					<div class="fh5co-blog animate-box">
+						<a href="{% url 'articles:detail' pk=article.pk%}" class="blog-bg" style="background-image:  url({{ article.thumb.url }}"></a>
+						<div class="blog-text">
+							<span class="posted_on">{{ article.date }}</span>
+							<h3><a href="{% url 'articles:detail' pk=article.pk%}">{{ article.Title }}</a></h3>
+							<p>{{article.Content|slice:":200" }}</p>
+							<ul class="stuff">
+								<li><i class="icon-eye2"></i>comments: {{ article.comments.count }}</li>
+								<li><a href="{% url 'articles:detail' pk=article.pk%}">Read More<i class="icon-arrow-right22"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+            </div>
+   </div>
+{% endblock content %}

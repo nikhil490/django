@@ -1,0 +1,27 @@
+    {% extends 'homepage.html' %} {% block content %}
+
+
+
+<div class="col-md-7 col-md-push-1 animate-box">
+        <div class="row">
+            <h1>Log in</h1>
+
+        <div class="col-md-12">
+            <div class="form-group">
+                <form method="POST" class="post-form">{% csrf_token %}
+                    {{ form.as_p }}
+            <div class="col-md-16">
+                <div class="form-group">
+                    <input type="submit" value="Login" class="btn btn-primary btn-modify">
+                 </div>
+            </div></form>
+                 <l1>Not got an account? <a href="{% url 'accounts:signup' %}">Sign Up</a></l1>
+
+            </div>
+
+        </div>
+     </div>
+
+    </div>
+
+{% endblock %}

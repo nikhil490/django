@@ -1,0 +1,25 @@
+{% extends 'homepage.html' %} {% block content %}
+
+
+    <div class="col-md-7 col-md-push-1 animate-box">
+        <div class="row">
+            <h1>New Article</h1>
+
+        <div class="col-md-12">
+            <div class="form-group">
+                <form method="POST" class="post-form" enctype="multipart/form-data">{% csrf_token %}
+
+                    {{ form.as_p }}
+            <div class="col-md-16">
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary btn-modify">
+                 </div>
+            </div></form>
+            </div>
+
+        </div>
+     </div>
+
+    </div>
+
+{% endblock %}

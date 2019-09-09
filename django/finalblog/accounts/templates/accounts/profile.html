@@ -1,0 +1,40 @@
+{% extends "homepage.html" %}
+
+{% block content %}
+
+<div id="fh5co-contact">
+			<div class="row animate-box">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+
+                        <h2>Update Your Profile</h2>
+                </div>
+             <div class="col-md-7 col-md-push-1 animate-box">
+                <div class="row">
+                  <div class="media">
+                        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+                          <div class="media-body">
+                            <h2 class="account-heading">{{ user.username }}</h2>
+                             <p class="text-secondary">{{ user.email }}</p>
+                          </div>
+                  </div>
+
+                      <div class="col-md-12">
+                       <div class="form-group">
+                        <form method="POST" class="post-form" enctype="multipart/form-data">{% csrf_token %}
+                                {{ u_form.as_p }}
+                                {{ p_form.as_p }}
+                                <div class="col-md-16">
+                                    <div class="form-group">
+                                            <input type="submit" value="Update" class="btn btn-primary btn-modify">
+                                     </div>
+                                 </div></form>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+</div>
+
+{% endblock %}
